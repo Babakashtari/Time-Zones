@@ -1,0 +1,65 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+h1 {
+  color: blue;
+  text-align: center;
+  padding: 2rem;
+}
+p {
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  color: blue;
+}
+section {
+  background-color: lightblue;
+  height: 450px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+section > div {
+  width: 200px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+section > div > div {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 3px solid black;
+  position: relative;
+}
+section > div > div > div {
+  position: absolute;
+  border-radius: 15px;
+  top: 50%;
+  left: 50%;
+  transform-origin: 50% 0%;
+}
+section > div > div > div.hour_handle {
+  width: 10px;
+  height: 30px;
+  background-color: blue;
+}
+section > div > div > div.minute_handle {
+  width: 5px;
+  height: 60px;
+  background: brown;
+}
+section > div > div > div.second_handle {
+  width: 2.5px;
+  height: 60px;
+  background-color: black;
+}
+@media screen and (max-width: 600px) {
+  section {
+    flex-direction: column;
+    height: 1200px;
+  }
+}
