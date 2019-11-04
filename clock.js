@@ -10,11 +10,16 @@ const seconds_number = document.querySelectorAll("section p>span:last-of-type");
 
 const timeCount = () => {
   const time = new Date();
+  const time_offset = time.getTimezoneOffset();
+  const local_time_milliseconds = Date.now();
+  const UTC_milliseconds = local_time_milliseconds + time_offset * 60000;
 
   // time in Iran:
-  const hours = time.getHours();
-  const minutes = time.getMinutes();
-  const seconds = time.getSeconds();
+  const Iranian_time_milliseconds = UTC_milliseconds + 12600000; //UTC +3.5
+  const Iranian_Time = new Date(Iranian_time_milliseconds);
+  const hours = Iranian_Time.getHours();
+  const minutes = Iranian_Time.getMinutes();
+  const seconds = Iranian_Time.getSeconds();
 
   hours_number[0].innerHTML = hours;
   minutes_number[0].innerHTML = minutes;
@@ -25,9 +30,8 @@ const timeCount = () => {
   seconds_handle[0].style.transform = `rotate(${seconds * 6 + 180}deg)`;
 
   // time in France:
-  const Iranian_Time_In_Milliseconds = Date.now();
-  const French_Time = new Date(Iranian_Time_In_Milliseconds - 9000000); //UTC+1
-
+  const French_Time_in_milliseconds = UTC_milliseconds + 3600000; //UTC+1
+  const French_Time = new Date(French_Time_in_milliseconds);
   const hours_France = French_Time.getHours();
   const minutes_France = French_Time.getMinutes();
   const seconds_France = French_Time.getSeconds();
@@ -41,7 +45,8 @@ const timeCount = () => {
   seconds_handle[1].style.transform = `rotate(${seconds_France * 6 + 180}deg)`;
 
   //   time in the US - Los Angeles:
-  const LA_Time = new Date(Iranian_Time_In_Milliseconds - 41400000); //UTC-10
+  const LA_Time_in_milliseconds = UTC_milliseconds - 36000000; //UTC-10
+  const LA_Time = new Date(LA_Time_in_milliseconds);
 
   const hours_LA = LA_Time.getHours();
   const minutes_LA = LA_Time.getMinutes();
