@@ -45,7 +45,7 @@ const timeCount = () => {
   seconds_handle[1].style.transform = `rotate(${seconds_France * 6 + 180}deg)`;
 
   //   time in the US - Los Angeles:
-  const LA_Time_in_milliseconds = UTC_milliseconds - 36000000; //UTC-10
+  const LA_Time_in_milliseconds = UTC_milliseconds - 28800000; //UTC-8
   const LA_Time = new Date(LA_Time_in_milliseconds);
 
   const hours_LA = LA_Time.getHours();

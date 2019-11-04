@@ -44,17 +44,20 @@ section > div > div > div {
 }
 section > div > div > div.hour_handle {
   width: 10px;
-  height: 30px;
+  height: 40px;
+  margin-left: -5px;
   background-color: blue;
 }
 section > div > div > div.minute_handle {
   width: 5px;
   height: 60px;
+  margin-left: -2.5px;
   background: brown;
 }
 section > div > div > div.second_handle {
   width: 2.5px;
   height: 60px;
+  margin-left: -0.75px;
   background-color: black;
 }
 @media screen and (max-width: 600px) {
