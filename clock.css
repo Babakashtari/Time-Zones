@@ -37,7 +37,7 @@ section > div > div {
 }
 section > div > div > div {
   position: absolute;
-  border-radius: 15px;
+  border-radius: 35px;
   top: 50%;
   left: 50%;
   transform-origin: 50% 0%;
@@ -47,18 +47,21 @@ section > div > div > div.hour_handle {
   height: 40px;
   margin-left: -5px;
   background-color: blue;
+  z-index: 3;
 }
 section > div > div > div.minute_handle {
   width: 5px;
   height: 60px;
   margin-left: -2.5px;
   background: brown;
+  z-index: 2;
 }
 section > div > div > div.second_handle {
   width: 2.5px;
-  height: 60px;
+  height: 80px;
   margin-left: -0.75px;
   background-color: black;
+  z-index: 1;
 }
 @media screen and (max-width: 600px) {
   section {
